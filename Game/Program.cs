@@ -10,31 +10,39 @@ namespace Game
     {
         static void Main(string[] args)
         {
-            int number; // кол-во игроков
-            int x; // Число полученное в заданом диапазоне
-            int count = 0;
+            Console.WriteLine("NameUser1");
+            string NameUser1 = (Console.ReadLine());
 
-            
+            Console.WriteLine("NameUser2");
+            string NameUser2 = (Console.ReadLine());
 
-            do
+            Random rand = new Random();
+            int gameNumber = rand.Next(12, 120);
+
+            Console.WriteLine("число = " + gameNumber);
+
+            int value;
+
+            while (gameNumber > 0)
             {
-                Console.WriteLine("number of players from 1 to 4 - ");  // выбираем кол-во игроков 
-                number = Convert.ToInt32(Console.ReadLine());
+                
+                Console.Write(NameUser1 + " Введите число от 1 до 4: ");
+                value = int.Parse(Console.ReadLine());
+                gameNumber -= value;
+                Console.WriteLine("число = " + gameNumber);
+
+                Console.Write(NameUser2 + " Введите число от 1 до 4: ");
+                value = int.Parse(Console.ReadLine());
+                gameNumber -= value;
+                Console.WriteLine("число = " + gameNumber);
 
 
-            } while ();
-
-            Console.WriteLine($"name user {i} ");
-
-            /*do
-            {
-                Console.Write($"Введите {i}-й результат вступительного испытания: ");
-                value = double.Parse(Console.ReadLine());
-                average += value;
-                i++;
-            } while (i <= 10);
-            */
+            }
 
         }
+
+
+
+
     }
 }
