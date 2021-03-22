@@ -77,7 +77,7 @@ namespace ConsoleApp1
                     }
                     Console.WriteLine("\nЧисло = " + gameNumber);
                     if (gameNumber <= 0) Console.WriteLine("Победил " + array[i]);
-                    //test
+                    /
 
                 }
             }  
