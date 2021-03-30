@@ -10,7 +10,42 @@ namespace Game
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("NameUser1");
+
+            Console.WriteLine("Введи число ");
+            //string numberString = Console.ReadLine();
+            int correctValue;
+            
+
+            //bool result = int.TryParse(numberString, out correctValue);
+
+            while (!int.TryParse(Console.ReadLine(), out correctValue))
+            {
+                Console.WriteLine("не число");
+                 
+                 //result = int.TryParse(Console.ReadLine(), out correctValue);
+            }
+
+            Console.WriteLine();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            /*Console.WriteLine("NameUser1");
             string NameUser1 = (Console.ReadLine());
 
             Console.WriteLine("NameUser2");
@@ -37,8 +72,20 @@ namespace Game
                 Console.WriteLine("число = " + gameNumber);
 
 
-            }
+            }*/
 
+
+            // static int CheckIntValue(string value)
+            //{
+
+
+
+
+
+
+
+
+            //}
         }
 
 
