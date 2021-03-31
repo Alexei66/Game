@@ -15,7 +15,7 @@ namespace ConsoleApp1
                         
             int correctValue;
            
-            while (!int.TryParse(Console.ReadLine(), out correctValue))
+            while (!int.TryParse(Console.ReadLine() , out correctValue))
             {
                 Console.WriteLine("Неправильно! Попробуй ещё раз.");
             }
@@ -25,7 +25,21 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {                       
             Console.Write("Введи кол-во игроков = ");
-            int playersCount = CheckIntValue();   //реализовать CheckIntValue() что значит number? "число"... назови "playersCount"  например
+            int playersCount ;   //реализовать CheckIntValue() что значит number? "число"... назови "playersCount"  например
+            bool exit = true;
+
+            do
+            {
+                playersCount = CheckIntValue();
+                if (playersCount <= 0)
+                {
+                    Console.WriteLine("Неправильно! Попробуй ещё раз.");
+                    //from = CheckIntValue();
+                    exit = false;
+                }
+                else exit = true;
+            }
+            while (exit == false);
 
             Random rand = new Random();
             int gameNumber = rand.Next(12, 120);
@@ -36,8 +50,7 @@ namespace ConsoleApp1
             //int from = CheckIntValue();   //реализовать CheckIntValue() добавить проверку на минимальное введенное число if(from < ... ) 
 
             Console.Write("\nВведите От: ");
-            int from;
-            bool exit = true;
+            int from;            
             
                 do
                 {
@@ -50,16 +63,10 @@ namespace ConsoleApp1
                     }
                     else exit = true;                    
                 }
-                while (exit == false);
-           
-
-            
-                //Console.WriteLine("Неправильно! Попробуй ещё раз.");
-               
+                while (exit == false);                      
         
             Console.Write("\nВведите До: ");
             int to ;   //реализовать CheckIntValue() добавить проверку на максимальное введенное число if(to > ... )
-
             
             do
             {
@@ -93,14 +100,15 @@ namespace ConsoleApp1
                     if (gameNumber <= to)
                     {
                         gameNumber -= gameNumber;
-                        Console.WriteLine("Комп победил");
+                        //Console.WriteLine("Конец игры");
                     }
                     else
                     {
                         gameNumber -= NumberPC;
                         Console.WriteLine("Комп выбрал = " + NumberPC + " остается " + gameNumber);
-                    }                                  
-                }                
+                    }
+                    
+                }
             }
             else
             {
